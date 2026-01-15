@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Dual Viewport",
+  "version": "1.0.0",
+  "description": "Test webpages in mobile and desktop views simultaneously with synchronized navigation",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "system.display",
+    "webNavigation",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Dual Viewport"
+  },
+  "web_accessible_resources": [{
+    "resources": ["inject.js"],
+    "matches": ["<all_urls>"]
+  }]
+}
